@@ -1,26 +1,26 @@
 /* ===== Design System ===== */
 :root {
-  --bg-primary: #0d1117;
-  --bg-secondary: #161b22;
-  --bg-card: #0d1117;
-  --bg-glass: rgba(22, 27, 34, 0.8);
-  --border-glass: #30363d;
-  --text-primary: #c9d1d9;
-  --text-secondary: #8b949e;
-  --text-muted: #484f58;
-  --accent-start: #58a6ff;
-  --accent-mid: #58a6ff;
-  --accent-end: #3fb950;
-  --gradient: linear-gradient(135deg, #58a6ff, #3fb950);
-  --success: #3fb950;
-  --danger: #f85149;
-  --warning: #d29922;
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
-  --shadow: 0 4px 24px rgba(0,0,0,0.5);
-  --font-ui: 'Consolas', 'Menlo', 'Monaco', 'Courier New', monospace;
+  --bg-primary: #f8f6f0; /* 練色（クリーム色） */
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.8);
+  --border-glass: #dcd8cc;
+  --text-primary: #2c2c2c; /* 墨色 */
+  --text-secondary: #5c5c5c;
+  --text-muted: #888888;
+  --accent-start: #1e314d; /* 藍色 */
+  --accent-mid: #6a7550; /* 鶯色 */
+  --accent-end: #b3424a; /* 臙脂色 */
+  --gradient: linear-gradient(135deg, #1e314d, #b3424a);
+  --success: #6a7550;
+  --danger: #b3424a;
+  --warning: #c7a252; /* 辛子色 */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --shadow: 0 4px 16px rgba(44, 44, 44, 0.08);
+  --font-ui: 'Noto Serif JP', 'Yu Mincho', serif;
   --font-code: 'Consolas', 'Menlo', 'Monaco', 'Courier New', monospace;
   --header-h: 56px;
   --nav-h: 64px;
@@ -129,7 +129,7 @@ body {
 .chapter-item:hover { border-color: var(--accent-mid); }
 .chapter-item__num {
   width: 32px; height: 32px; border-radius: 50%;
-  background: var(--gradient); display: flex; align-items: center; justify-content: center;
+  background: var(--accent-start); display: flex; align-items: center; justify-content: center;
   font-weight: 700; font-size: 0.85rem; flex-shrink: 0; color: #fff;
 }
 .chapter-item__title { font-weight: 600; font-size: 0.9rem; }
@@ -148,18 +148,18 @@ body {
 .md-content p { margin: 8px 0; font-size: 0.88rem; }
 .md-content ul, .md-content ol { margin: 8px 0; padding-left: 20px; font-size: 0.88rem; }
 .md-content li { margin: 4px 0; }
-.md-content strong { color: #58a6ff; font-weight: 700; }
+.md-content strong { color: var(--accent-end); font-weight: 700; }
 .md-content code {
-  font-family: var(--font-code); background: var(--bg-secondary);
-  padding: 2px 6px; border-radius: 4px; font-size: 0.85rem; color: #c9d1d9; border: 1px solid var(--border-glass);
+  font-family: var(--font-code); background: rgba(0,0,0,0.05);
+  padding: 2px 6px; border-radius: 4px; font-size: 0.85rem; color: var(--accent-end); border: 1px solid var(--border-glass);
 }
 .md-content pre {
-  background: #0d1117 !important; border: 1px solid var(--border-glass);
+  background: #fdfdfd !important; border: 1px solid var(--border-glass);
   border-radius: var(--radius-md); padding: 14px; margin: 12px 0;
   overflow-x: auto; -webkit-overflow-scrolling: touch;
 }
 .md-content pre code {
-  background: none; padding: 0; font-size: 0.78rem; line-height: 1.6; color: #e6edf3;
+  background: none; padding: 0; font-size: 0.78rem; line-height: 1.6; color: #333;
 }
 .md-content table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.85rem; }
 .md-content th, .md-content td { border: 1px solid var(--border-glass); padding: 8px 10px; text-align: left; }
@@ -209,10 +209,10 @@ body {
   background: var(--bg-secondary); transform: rotateY(180deg);
 }
 .flip-card__back pre {
-  background: #0d1117; border-radius: var(--radius-sm); padding: 10px;
-  overflow-x: auto; margin: 0; font-size: 0.75rem;
+  background: #fdfdfd; border-radius: var(--radius-sm); padding: 10px;
+  overflow-x: auto; margin: 0; font-size: 0.75rem; border: 1px solid var(--border-glass);
 }
-.flip-card__back code { font-family: var(--font-code); font-size: 0.75rem; color: #e6edf3; }
+.flip-card__back code { font-family: var(--font-code); font-size: 0.75rem; color: #333; }
 .flip-card__back-desc { font-size: 0.78rem; color: var(--text-secondary); margin-top: 6px; }
 
 /* ===== Quiz ===== */

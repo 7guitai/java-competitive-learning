@@ -3,7 +3,7 @@ import { Marked } from 'marked';
 import markedKatex from 'marked-katex-extension';
 import hljs from 'highlight.js/lib/core';
 import java from 'highlight.js/lib/languages/java';
-import 'highlight.js/styles/github-dark.css';
+import 'highlight.js/styles/github.css';
 
 hljs.registerLanguage('java', java);
 
