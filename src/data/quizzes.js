@@ -1,4 +1,4 @@
-// クイズデータ (自動生成) - 100問収録
+// クイズデータ (自動生成) - 128問収録
 // answer は 0~3 のインデックスで正解を指定します
 export const quizzes = [
   {
@@ -579,7 +579,7 @@ export const quizzes = [
   },
   {
     "chapter": 5,
-    "question": "int型の引数をメソッドに渡し、メソッド内で変更した場合、元の変数はどうなる？",
+    "question": "int型の引数をメソッドに渡し、メソッド内で変更した場合、元の変注はどうなる？",
     "options": [
       "変更される",
       "変更されない",
@@ -684,18 +684,6 @@ export const quizzes = [
     ],
     "answer": 2,
     "explanation": "HashSetはハッシュテーブルを使うため、平均O(1)で検索できます。"
-  },
-  {
-    "chapter": 6,
-    "question": "BFS（幅優先探索）で使うデータ構造は？",
-    "options": [
-      "Stack",
-      "Queue",
-      "PriorityQueue",
-      "ArrayList"
-    ],
-    "answer": 1,
-    "explanation": "BFSではQueue（FIFO）を使って近い頂点から順に探索します。"
   },
   {
     "chapter": 6,
@@ -816,6 +804,18 @@ export const quizzes = [
     ],
     "answer": 1,
     "explanation": "Collections.reverseOrder() をコンストラクタに渡します。"
+  },
+  {
+    "chapter": 6,
+    "question": "「ある値が存在するかどうか」を高速に判定するデータ構造は？",
+    "options": [
+      "ArrayList",
+      "ArrayDeque",
+      "HashSet",
+      "Queue"
+    ],
+    "answer": 2,
+    "explanation": "HashSet (Setインターフェース) が最適です。"
   },
   {
     "chapter": 7,
@@ -963,7 +963,7 @@ export const quizzes = [
   },
   {
     "chapter": 8,
-    "question": "最短経路を求めるのに適したアルゴリズムは？",
+    "question": "辺のコストが全て等しい場合の最短経路を求めるのに適したアルゴリズムは？",
     "options": [
       "DFS",
       "BFS",
@@ -971,7 +971,7 @@ export const quizzes = [
       "ソート"
     ],
     "answer": 1,
-    "explanation": "BFS（幅優先探索）は各辺のコストが等しい場合の最短経路を求められます。"
+    "explanation": "BFS（幅優先探索）はQueueを使って近い頂点から順に探索します。"
   },
   {
     "chapter": 8,
@@ -987,66 +987,6 @@ export const quizzes = [
   },
   {
     "chapter": 8,
-    "question": "グラフの頂点と辺のつながりを保存する一般的なデータ構造は？",
-    "options": [
-      "2次元配列のみ",
-      "隣接リスト (ArrayList の配列など)",
-      "キュー",
-      "TreeSet"
-    ],
-    "answer": 1,
-    "explanation": "メモリ効率の良い「隣接リスト」が最も一般的に使われます。"
-  },
-  {
-    "chapter": 8,
-    "question": "Union-Find が得意な処理はどれ？",
-    "options": [
-      "最短経路の計算",
-      "配列のソート",
-      "要素が同じグループかの判定と結合",
-      "文字列の検索"
-    ],
-    "answer": 2,
-    "explanation": "グラフの連結成分を高速に管理するためのデータ構造です。"
-  },
-  {
-    "chapter": 8,
-    "question": "Union-Findの `root(x)` メソッド内で、親を辿りながら直接根に繋ぎ直す高速化手法を何と呼ぶ？",
-    "options": [
-      "サイズ最適化",
-      "経路圧縮",
-      "メモ化",
-      "枝刈り"
-    ],
-    "answer": 1,
-    "explanation": "経路圧縮により、次からの探索がほぼ O(1) になります。"
-  },
-  {
-    "chapter": 8,
-    "question": "ダイクストラ法で、探索する頂点を管理するために使うデータ構造は？",
-    "options": [
-      "Stack",
-      "Queue",
-      "PriorityQueue",
-      "HashSet"
-    ],
-    "answer": 2,
-    "explanation": "「暫定距離が最も短い頂点」から探索を広げるため、PriorityQueueを使います。"
-  },
-  {
-    "chapter": 8,
-    "question": "ダイクストラ法が使えないグラフの条件は？",
-    "options": [
-      "頂点数が多い",
-      "有向グラフ",
-      "負のコストの辺がある",
-      "閉路がある"
-    ],
-    "answer": 2,
-    "explanation": "負の辺があると「一度確定した最短距離が後から覆る」ため、ダイクストラ法は使えません。"
-  },
-  {
-    "chapter": 8,
     "question": "二分探索 (Binary Search) の計算量は？",
     "options": [
       "O(1)",
@@ -1056,18 +996,6 @@ export const quizzes = [
     ],
     "answer": 1,
     "explanation": "探索範囲を半分ずつ狭めていくため、O(log N) と非常に高速です。"
-  },
-  {
-    "chapter": 8,
-    "question": "BFSで距離を記録する配列 `dist` の初期値として適しているのは？",
-    "options": [
-      "0",
-      "1",
-      "-1 や INF(巨大な数)",
-      "N"
-    ],
-    "answer": 2,
-    "explanation": "未訪問であることを表すために -1 や INF で初期化します。"
   },
   {
     "chapter": 8,
@@ -1082,7 +1010,415 @@ export const quizzes = [
     "explanation": "1-indexed にして sum[0]=0 とすることで、区間の計算式がスッキリします。"
   },
   {
+    "chapter": 8,
+    "question": "Bit全探索で、「選ぶか選ばないか」を全探索する時の最大要素数 N の目安は？",
+    "options": [
+      "N=20",
+      "N=100",
+      "N=1000",
+      "N=100000"
+    ],
+    "answer": 0,
+    "explanation": "2^20 は約100万なので間に合いますが、2^30は10億になり間に合いません。"
+  },
+  {
+    "chapter": 8,
+    "question": "1 << N の演算が意味するものは？",
+    "options": [
+      "Nの階乗",
+      "2のN乗",
+      "Nの2乗",
+      "Nの半分"
+    ],
+    "answer": 1,
+    "explanation": "1を左にNビットシフトするため、2^N を表します。"
+  },
+  {
+    "chapter": 8,
+    "question": "(i >> j) & 1 が意味するものは？",
+    "options": [
+      "iとjの掛け算",
+      "iのj番目のビットが1かどうか",
+      "iの右からj番目を消す",
+      "iをj倍する"
+    ],
+    "answer": 1,
+    "explanation": "iを右にjずらして1と論理積をとることで、j番目のビットの状態を取得します。"
+  },
+  {
+    "chapter": 8,
+    "question": "BFSでキューの先頭から要素を取り出すメソッドは？",
+    "options": [
+      "pop()",
+      "poll()",
+      "shift()",
+      "dequeue()"
+    ],
+    "answer": 1,
+    "explanation": "JavaのQueueインターフェースでは poll() または remove() を使います。"
+  },
+  {
     "chapter": 9,
+    "question": "グラフの頂点と辺のつながりを保存する一般的なデータ構造は？",
+    "options": [
+      "2次元配列のみ",
+      "隣接リスト (ArrayList の配列など)",
+      "キュー",
+      "TreeSet"
+    ],
+    "answer": 1,
+    "explanation": "メモリ効率の良い「隣接リスト」が最も一般的に使われます。"
+  },
+  {
+    "chapter": 9,
+    "question": "Union-Find が得意な処理はどれ？",
+    "options": [
+      "最短経路の計算",
+      "配列のソート",
+      "要素が同じグループかの判定と結合",
+      "文字列の検索"
+    ],
+    "answer": 2,
+    "explanation": "グラフの連結成分を高速に管理するためのデータ構造です。"
+  },
+  {
+    "chapter": 9,
+    "question": "Union-Findの `root(x)` メソッド内で、親を辿りながら直接根に繋ぎ直す高速化手法を何と呼ぶ？",
+    "options": [
+      "サイズ最適化",
+      "経路圧縮",
+      "メモ化",
+      "枝刈り"
+    ],
+    "answer": 1,
+    "explanation": "経路圧縮により、次からの探索がほぼ O(1) になります。"
+  },
+  {
+    "chapter": 9,
+    "question": "ダイクストラ法で、探索する頂点を管理するために使うデータ構造は？",
+    "options": [
+      "Stack",
+      "Queue",
+      "PriorityQueue",
+      "HashSet"
+    ],
+    "answer": 2,
+    "explanation": "「暫定距離が最も短い頂点」から探索を広げるため、PriorityQueueを使います。"
+  },
+  {
+    "chapter": 9,
+    "question": "ダイクストラ法が使えないグラフの条件は？",
+    "options": [
+      "頂点数が多い",
+      "有向グラフ",
+      "負のコストの辺がある",
+      "閉路がある"
+    ],
+    "answer": 2,
+    "explanation": "負の辺があると「一度確定した最短距離が後から覆る」ため、ダイクストラ法は使えません。"
+  },
+  {
+    "chapter": 9,
+    "question": "タスクの依存関係を順序立てて並べるグラフアルゴリズムは？",
+    "options": [
+      "ダイクストラ法",
+      "トポロジカルソート",
+      "クラスカル法",
+      "ワーシャルフロイド法"
+    ],
+    "answer": 1,
+    "explanation": "依存関係（有向グラフ）を矛盾なく並べるのをトポロジカルソートと呼びます。"
+  },
+  {
+    "chapter": 9,
+    "question": "トポロジカルソートの実装で、最初にキューに入れるのはどんな頂点？",
+    "options": [
+      "入次数が最大",
+      "入次数が0",
+      "出次数が0",
+      "ランダム"
+    ],
+    "answer": 1,
+    "explanation": "自分に向かってくる辺がない（依存先がない）頂点から処理を始めます。"
+  },
+  {
+    "chapter": 9,
+    "question": "グラフ全体の辺を最小コストで繋ぐ「最小全域木」を求めるアルゴリズムは？",
+    "options": [
+      "クラスカル法",
+      "ダイクストラ法",
+      "DFS",
+      "ベルマンフォード法"
+    ],
+    "answer": 0,
+    "explanation": "辺をコストの昇順にソートし、Union-Findで繋いでいくのがクラスカル法です。"
+  },
+  {
+    "chapter": 9,
+    "question": "クラスカル法で辺をソートするために使うインターフェースは？",
+    "options": [
+      "Runnable",
+      "Comparable",
+      "Serializable",
+      "Cloneable"
+    ],
+    "answer": 1,
+    "explanation": "EdgeクラスにComparableを実装し、weightで比較できるようにします。"
+  },
+  {
+    "chapter": 9,
+    "question": "トポロジカルソート後、出力された頂点数がNより少ない場合は何を意味する？",
+    "options": [
+      "成功",
+      "グラフが非連結",
+      "グラフに閉路(循環)がある",
+      "バグ"
+    ],
+    "answer": 2,
+    "explanation": "閉路（A→B→C→A）があると入次数が0にならず、ソートが途中で止まります。"
+  },
+  {
+    "chapter": 10,
+    "question": "動的計画法 (DP) の基本的な考え方は？",
+    "options": [
+      "ランダムに試す",
+      "大きな問題を、小さな問題の結果を利用して解く",
+      "全てのパターンを列挙する",
+      "常に最善手を選ぶ"
+    ],
+    "answer": 1,
+    "explanation": "過去の計算結果を配列にメモしておくことで計算を効率化します。"
+  },
+  {
+    "chapter": 10,
+    "question": "DPで「現在の自分の値が確定したとして、未来の値を更新しにいく」実装を何と呼ぶ？",
+    "options": [
+      "貰うDP",
+      "配るDP",
+      "再帰DP",
+      "戻るDP"
+    ],
+    "answer": 1,
+    "explanation": "未来の状態へ遷移（更新）していく方式を「配るDP (Push DP)」と呼びます。"
+  },
+  {
+    "chapter": 10,
+    "question": "ナップサックDPの実装で一般的に使われるデータ構造は？",
+    "options": [
+      "1次元配列",
+      "2次元配列",
+      "PriorityQueue",
+      "HashMap"
+    ],
+    "answer": 1,
+    "explanation": "「何個目まで見たか」「その時の重さ合計」の2つの状態を持つため、2次元配列が基本です。"
+  },
+  {
+    "chapter": 10,
+    "question": "DP配列の初期化で、最小化問題の場合によく使われる初期値は？",
+    "options": [
+      "0",
+      "-1",
+      "非常に大きな数 (Long.MAX_VALUE 等)",
+      "ランダム"
+    ],
+    "answer": 2,
+    "explanation": "Math.minで更新していくため、初期値は無限大にしておく必要があります。"
+  },
+  {
+    "chapter": 10,
+    "question": "部分和問題のDP配列の型として最適なのは？",
+    "options": [
+      "int[][]",
+      "long[][]",
+      "boolean[][]",
+      "String[][]"
+    ],
+    "answer": 2,
+    "explanation": "作れるか・作れないかの「判定」なので、boolean型がメモリ効率が良いです。"
+  },
+  {
+    "chapter": 10,
+    "question": "フィボナッチ数列を再帰関数で素直に書くとTLEする理由は？",
+    "options": [
+      "配列が大きすぎる",
+      "同じ計算を何度も繰り返して指数時間になるから",
+      "メモリリークするから",
+      "再帰が深すぎるから"
+    ],
+    "answer": 1,
+    "explanation": "F(N-1)とF(N-2)で同じ関数を何度も呼び出すため、O(2^N) の時間がかかります。"
+  },
+  {
+    "chapter": 10,
+    "question": "配るDPで「1個先へのジャンプ」を更新する式は？",
+    "options": [
+      "dp[i] = dp[i-1] + 1",
+      "dp[i+1] = Math.min(dp[i+1], dp[i] + cost)",
+      "dp[i] = min",
+      "dp[i+1] = 0"
+    ],
+    "answer": 1,
+    "explanation": "現在の値 dp[i] にコストを足した値で、未来の値 dp[i+1] を更新します。"
+  },
+  {
+    "chapter": 10,
+    "question": "ナップサックDPで、i番目の品物を【選ばない】場合の遷移先は？",
+    "options": [
+      "dp[i+1][w] = dp[i][w]",
+      "dp[i][w+1] = dp[i][w]",
+      "dp[i+1][w] = 0",
+      "更新しない"
+    ],
+    "answer": 0,
+    "explanation": "重さは増えないため、そのまま次の状態へ価値を引き継ぎます。"
+  },
+  {
+    "chapter": 10,
+    "question": "ナップサックDPで、i番目の品物を【選ぶ】場合の条件は？",
+    "options": [
+      "価値が正である",
+      "重さの合計が W を超えない (w + weight[i] <= W)",
+      "偶数である",
+      "常に選べる"
+    ],
+    "answer": 1,
+    "explanation": "ナップサックの容量Wをオーバーするような選び方はできません。"
+  },
+  {
+    "chapter": 10,
+    "question": "DPを使うべき問題のサイン（特徴）は？",
+    "options": [
+      "Nが10^5以上",
+      "Nが100程度で、選び方の最大化や判定を求める",
+      "全て0",
+      "文字列の検索"
+    ],
+    "answer": 1,
+    "explanation": "全探索するとO(2^N)になるが、Nが数千〜数万以内で、状態をまとめられる場合に有効です。"
+  },
+  {
+    "chapter": 11,
+    "question": "足し算・掛け算の途中で Mod (余り) をとっても、最終結果の余りは変わらない。○か×か？",
+    "options": [
+      "○",
+      "×",
+      "足し算のみ",
+      "掛け算のみ"
+    ],
+    "answer": 0,
+    "explanation": "計算のどのタイミングで余りをとっても最終結果は同じになる強力な性質があります。"
+  },
+  {
+    "chapter": 11,
+    "question": "Javaの引き算のMod計算 `(a - b) % MOD` における罠は？",
+    "options": [
+      "遅い",
+      "負の余りになる可能性がある",
+      "オーバーフローする",
+      "0で割る"
+    ],
+    "answer": 1,
+    "explanation": "Javaでは負の数の % は負になるため、`if (sub < 0) sub += MOD;` などの処理が必要です。"
+  },
+  {
+    "chapter": 11,
+    "question": "最大公約数(GCD)を O(log(min(A,B))) で求める超高速なアルゴリズムは？",
+    "options": [
+      "ダイクストラ法",
+      "ユークリッドの互除法",
+      "フェルマーの小定理",
+      "クラスカル法"
+    ],
+    "answer": 1,
+    "explanation": "「a を b で割った余りを r としたとき、gcd(a, b) = gcd(b, r)」という性質を利用します。"
+  },
+  {
+    "chapter": 11,
+    "question": "最小公倍数(LCM)を求める正しい計算順序は？",
+    "options": [
+      "a * b / gcd(a,b)",
+      "a / gcd(a,b) * b",
+      "a * gcd(a,b)",
+      "a + b"
+    ],
+    "answer": 1,
+    "explanation": "a * b を先に計算するとオーバーフローする危険があるため、先に割り算を行います。"
+  },
+  {
+    "chapter": 11,
+    "question": "Nが素数か判定するとき、ループはどこまで回せば十分か？",
+    "options": [
+      "N",
+      "N / 2",
+      "√N (Math.sqrt(N))",
+      "log N"
+    ],
+    "answer": 2,
+    "explanation": "約数はペアになるため、√N まで調べればすべての約数を網羅できます。"
+  },
+  {
+    "chapter": 11,
+    "question": "1からNまでの素数を列挙する O(N log log N) のアルゴリズムは？",
+    "options": [
+      "エラトステネスの篩",
+      "ニュートン法",
+      "ユークリッドの互除法",
+      "素数定理"
+    ],
+    "answer": 0,
+    "explanation": "素数の倍数を次々に「ふるい落としていく」アルゴリズムです。"
+  },
+  {
+    "chapter": 11,
+    "question": "組み合わせ (nCr) の計算で、階乗(!)を素直に計算するとどうなる？",
+    "options": [
+      "速い",
+      "メモリ不足になる",
+      "すぐにオーバーフローする",
+      "常に正しい"
+    ],
+    "answer": 2,
+    "explanation": "20! の時点でlongの上限を超えるため、パスカルの三角形等の工夫が必要です。"
+  },
+  {
+    "chapter": 11,
+    "question": "競プロでよく使われる巨大な素数のModとして代表的なものは？",
+    "options": [
+      "10000",
+      "998244353",
+      "123456789",
+      "10^18"
+    ],
+    "answer": 1,
+    "explanation": "998244353 や 1000000007 (10^9+7) が非常によく使われます。"
+  },
+  {
+    "chapter": 11,
+    "question": "パスカルの三角形を使って nCr のテーブルを作る際、C[i][j] はどう計算する？",
+    "options": [
+      "C[i-1][j-1] + C[i-1][j]",
+      "C[i][j-1] * j",
+      "i * j",
+      "1"
+    ],
+    "answer": 0,
+    "explanation": "直上の2つの値を足し合わせることで組み合わせの数を計算できます。"
+  },
+  {
+    "chapter": 11,
+    "question": "割り算の Mod を求めるために必要な数学的定理は？",
+    "options": [
+      "三平方の定理",
+      "フェルマーの小定理",
+      "ピタゴラスの定理",
+      "オイラーの公式"
+    ],
+    "answer": 1,
+    "explanation": "フェルマーの小定理を用いて「逆元」を計算し、割り算を掛け算に変換する必要があります。"
+  },
+  {
+    "chapter": 12,
     "question": "N=10⁵ のとき、O(N²) のアルゴリズムは間に合いますか？",
     "options": [
       "余裕で間に合う",
@@ -1094,7 +1430,7 @@ export const quizzes = [
     "explanation": "10⁵×10⁵=10¹⁰（100億回）。10⁸の法則から確実にTLEです。"
   },
   {
-    "chapter": 9,
+    "chapter": 12,
     "question": "PrintWriter で出力した後、最後に必ず呼ぶメソッドは？",
     "options": [
       "close()",
@@ -1106,7 +1442,7 @@ export const quizzes = [
     "explanation": "flush()を呼ばないとバッファに溜まったまま出力されません。"
   },
   {
-    "chapter": 9,
+    "chapter": 12,
     "question": "競技プログラミングにおいて、1秒間に処理できるループ回数の目安（法則）は？",
     "options": [
       "約10⁴（1万）回",
@@ -1118,7 +1454,7 @@ export const quizzes = [
     "explanation": "約10⁸（1億）回が目安です。これを超えるとTLEの危険性が高まります。"
   },
   {
-    "chapter": 9,
+    "chapter": 12,
     "question": "N=10⁵ の制約で許容される一般的な計算量オーダーは？",
     "options": [
       "O(N!)",
@@ -1130,7 +1466,7 @@ export const quizzes = [
     "explanation": "10⁵ * log2(10⁵) ≈ 10⁵ * 17 ≈ 1.7×10⁶ なので余裕で間に合います。"
   },
   {
-    "chapter": 9,
+    "chapter": 12,
     "question": "java.util.Scanner が大量の入力データで遅い主な理由は？",
     "options": [
       "ディスクアクセスが遅いから",
@@ -1142,7 +1478,7 @@ export const quizzes = [
     "explanation": "内部で正規表現エンジンを使用して区切り文字を判定しているため、処理が重くなります。"
   },
   {
-    "chapter": 9,
+    "chapter": 12,
     "question": "N=20 の制約のときに想定されるアルゴリズム（計算量）は？",
     "options": [
       "O(N log N)",
@@ -1154,7 +1490,7 @@ export const quizzes = [
     "explanation": "2^20 は約100万なので、全パターンの探索（bit全探索など）が可能です。"
   },
   {
-    "chapter": 9,
+    "chapter": 12,
     "question": "FastScanner がScannerより高速な理由は？",
     "options": [
       "C++で書かれているから",
@@ -1166,7 +1502,7 @@ export const quizzes = [
     "explanation": "正規表現や余計なオブジェクト生成を省き、生のバイト配列から直接計算するからです。"
   },
   {
-    "chapter": 9,
+    "chapter": 12,
     "question": "PrintWriter が System.out.println より高速な理由は？",
     "options": [
       "文字を圧縮するから",
@@ -1178,7 +1514,7 @@ export const quizzes = [
     "explanation": "出力のたびにOSへ通信するのを避け、メモリに溜めて一気に出力するからです。"
   },
   {
-    "chapter": 9,
+    "chapter": 12,
     "question": "O(N) のアルゴリズムが意味するものは？",
     "options": [
       "入力サイズ N に比例して時間がかかる",
@@ -1190,7 +1526,7 @@ export const quizzes = [
     "explanation": "O(N) は入力サイズ N に対して線形に（比例して）計算量が増えることを意味します。"
   },
   {
-    "chapter": 9,
+    "chapter": 12,
     "question": "N=10 の制約のときに想定されるアルゴリズム（計算量）は？",
     "options": [
       "二分探索",
