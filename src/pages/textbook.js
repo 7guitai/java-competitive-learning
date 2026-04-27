@@ -48,8 +48,11 @@ function renderChapterContent(id) {
   if (!ch) return renderChapterList();
   const html = marked.parse(ch.content);
   return `<div class="main-content fade-in">
-    <button class="chapter-back" id="chapter-back">← 章一覧に戻る</button>
+    <button class="chapter-back" id="chapter-back-top">← 章一覧に戻る</button>
     <div class="md-content">${html}</div>
+    <div style="margin-top: 2rem; text-align: center;">
+      <button class="chapter-back" id="chapter-back-bottom" style="padding: 1rem 2rem; font-size: 1.1rem; width: 100%;">← 章一覧に戻る</button>
+    </div>
   </div>`;
 }
 
@@ -60,13 +63,13 @@ export function bindTextbookEvents(container) {
       window.dispatchEvent(new CustomEvent('rerender'));
     });
   });
-  const back = container.querySelector('#chapter-back');
-  if (back) {
-    back.addEventListener('click', () => {
+  container.querySelectorAll('.chapter-back').forEach(backBtn => {
+    backBtn.addEventListener('click', () => {
       currentChapter = null;
       window.dispatchEvent(new CustomEvent('rerender'));
+      window.scrollTo(0, 0); // 上に戻す
     });
-  }
+  });
 }
 
 export function resetTextbook() {

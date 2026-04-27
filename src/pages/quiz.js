@@ -16,7 +16,9 @@ function shuffle(arr) {
 }
 
 function startQuiz() {
-  shuffledQuizzes = shuffle(quizzes);
+  // 全問題からシャッフルして、ランダムに10問だけピックアップする
+  const MAX_QUESTIONS = 10;
+  shuffledQuizzes = shuffle(quizzes).slice(0, MAX_QUESTIONS);
   currentIndex = 0;
   score = 0;
   answered = false;
