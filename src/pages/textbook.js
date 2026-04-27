@@ -1,5 +1,6 @@
 import { chapters } from '../data/chapters.js';
 import { Marked } from 'marked';
+import markedKatex from 'marked-katex-extension';
 import hljs from 'highlight.js/lib/core';
 import java from 'highlight.js/lib/languages/java';
 import 'highlight.js/styles/github-dark.css';
@@ -16,6 +17,11 @@ const marked = new Marked({
     }
   }
 });
+
+marked.use(markedKatex({
+  throwOnError: false,
+  displayMode: false
+}));
 
 let currentChapter = null;
 

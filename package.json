@@ -12,7 +12,9 @@
     "vite": "^6.3.0"
   },
   "dependencies": {
+    "highlight.js": "^11.11.0",
+    "katex": "^0.16.45",
     "marked": "^15.0.0",
-    "highlight.js": "^11.11.0"
+    "marked-katex-extension": "^5.1.8"
   }
 }
